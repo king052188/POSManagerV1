@@ -11,6 +11,8 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', 'LoginController@index');
+
+Route::get('/dashboard', 'PortalController@dashboard');
+
+Route::get('/stores/list-view', 'PortalController@stores_list_view');
