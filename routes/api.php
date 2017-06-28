@@ -2,6 +2,7 @@
 
 use Illuminate\Http\Request;
 
+
 /*
 |--------------------------------------------------------------------------
 | API Routes
@@ -19,3 +20,5 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 
 
 Route::get('/hashed/code/{value}', 'ApiController@hashed_code');
+
+Route::get('/get/store/info/{hashed_code}', 'ApiController@store_info');
