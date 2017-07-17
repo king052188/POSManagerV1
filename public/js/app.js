@@ -884,7 +884,7 @@ $(function() {
 });
 $(function() {
 
-    if (!$('#dashboard-visits-chart').length) {
+    if (!$('#dashboard-daily-chart').length) {
         return false;
     }
 
@@ -892,7 +892,7 @@ $(function() {
     drawVisitsChart();
 
     var el = null;
-    var item = 'visits';
+    var item = 'daily';
 
     $('a[data-toggle="tab"]').on('shown.bs.tab', function (e) {
        
@@ -914,10 +914,10 @@ $(function() {
         }
 
         switch(item){
-            case 'visits':
+            case 'daily':
                 drawVisitsChart();
                 break;
-             case 'downloads':
+             case 'yearly':
                 drawDownloadsChart();
                 break;
         }
@@ -934,14 +934,13 @@ $(function() {
             { x: '2015-09-07', y: 86 } 
         ];
 
-
         Morris.Line({
-            element: 'dashboard-visits-chart',
+            element: 'dashboard-daily-chart',
             data: dataVisits,
             xkey: 'x',
             ykeys: ['y'],
             ymin: 'auto 40',
-            labels: ['Visits'],
+            labels: ['Sales'],
             xLabels: "day",
             hideHover: 'auto',
             yLabelFormat: function (y) {
@@ -967,54 +966,29 @@ $(function() {
 
         var dataDownloads = [
             { 
-                year: '2006',
-                downloads: 1300
+                year: '2014',
+                yearly: 1300
             },
             { 
-                year: '2007', 
-                downloads: 1526
+                year: '2015',
+                yearly: 1526
             },
             { 
-                year: '2008', 
-                downloads: 2000
+                year: '2016',
+                yearly: 2000
             },
             { 
-                year: '2009', 
-                downloads: 1800
-            },
-            { 
-                year: '2010', 
-                downloads: 1650
-            },    
-            { 
-                year: '2011', 
-                downloads: 620
-            },
-            { 
-                year: '2012', 
-                downloads: 1000
-            },
-            { 
-                year: '2013', 
-                downloads: 1896
-            },
-            { 
-                year: '2014', 
-                downloads: 850
-            },
-            { 
-                year: '2015', 
-                downloads: 1500
-            }  
+                year: '2017',
+                yearly: 600
+            }
         ];
 
-
         Morris.Bar({
-            element: 'dashboard-downloads-chart',
+            element: 'dashboard-yearly-chart',
             data: dataDownloads,
             xkey: 'year',
-            ykeys: ['downloads'],
-            labels: ['Downloads'],
+            ykeys: ['yearly'],
+            labels: ['Sales'],
             hideHover: 'auto',
             resize: true,
             barColors: [
@@ -1042,9 +1016,9 @@ $(function() {
 
         Morris.Donut({
             element: 'dashboard-sales-breakdown-chart',
-            data: [{ label: "Download Sales", value: 12 },
-                { label: "In-Store Sales", value: 30 },
-                { label: "Mail-Order Sales", value: 20 } ],
+            data: [{ label: "CDG Sales", value: 55 },
+                { label: "CP1-Store Sales", value: 30 },
+                { label: "CPS-Store Sales", value: 20 } ],
             resize: true,
             colors: [
                 tinycolor(config.chart.colorPrimary.toString()).lighten(10).toString(),
@@ -1090,8 +1064,7 @@ $(function() {
 					data.push(Math.round(100 * Math.random()));
 				}
 			}
-
-
+            
 			$(this).sparkline(data, {
 				barColor: config.chart.colorPrimary.toString(),
 				height: $(this).height(),

@@ -12,7 +12,7 @@ class PortalController extends Controller
     public function dashboard() {
         $IsSecured = ["ssl" => false];
 
-        return view('layout.portal', compact('IsSecured'));
+        return view('pages.dashboard', compact('IsSecured'));
     }
 
 
@@ -20,8 +20,6 @@ class PortalController extends Controller
         $IsSecured = ["ssl" => false];
 
         $token = HelperController::hash_code();
-
-        dd($token);
 
         return view('pages.stores.list', compact('IsSecured'));
     }
