@@ -21,6 +21,8 @@ class PortalController extends Controller
 
         $token = HelperController::hash_code();
 
+        dd($token);
+
         return view('pages.stores.list', compact('IsSecured'));
     }
 }
