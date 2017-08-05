@@ -15,4 +15,6 @@ Route::get('/', 'LoginController@index');
 
 Route::get('/dashboard', 'PortalController@dashboard');
 
-Route::get('/stores/list-view', 'PortalController@stores_list_view');
+Route::get('/store/list-view', 'PortalController@store_lists_view');
+
+Route::get('/store/customer/{store}', 'PortalController@store_costumer_view');

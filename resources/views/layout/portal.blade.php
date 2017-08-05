@@ -10,6 +10,14 @@
     <link rel="apple-touch-icon" href="apple-touch-icon.png">
     <link rel="stylesheet" href="{{ asset('/css/vendor.css', $IsSecured['ssl']) }}">
     <link rel="stylesheet" href="{{ asset('/css/app.css', $IsSecured['ssl']) }}">
+
+    <script src="http://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/numeral.js/1.5.6/numeral.min.js"></script>
+
+    <script>
+        var host = "{{ url('') }}";
+    </script>
+
 </head>
 
 <body>
@@ -132,8 +140,9 @@
                             </a>
                             <ul>
                                 {{--<a href="#" class="add-image" data-toggle="modal" data-target="#modal-media">--}}
-                                <li><a href="#"  data-toggle="modal" data-target="#modal-media">Add New</a></li>
-                                <li><a href="/stores/list-view">List View</a></li>
+                                <li><a href="#"  data-toggle="modal" data-target="#modal-media">Add Store</a></li>
+                                <li><a href="/store/list-view">View Store</a></li>
+                                <li><a href="/store/customer/all">Customer Data</a></li>
                             </ul>
                         </li>
                     </ul>
