@@ -22,3 +22,5 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 Route::get('/hashed/code/{value}', 'ApiController@hashed_code');
 
 Route::get('/get/store/info/{hashed_code}', 'ApiController@store_info');
+
+Route::get('/push/customer/data/{store_id}', 'ApiController@save_customer_data');

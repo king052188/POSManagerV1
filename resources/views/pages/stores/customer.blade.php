@@ -51,7 +51,7 @@
                                                     <td> {{ $customers[$i]->LAST_NAME }}, {{ $customers[$i]->FIRST_NAME }}, {{ $customers[$i]->MIDDLE_NAME }} </td>
                                                     <td> {{ $customers[$i]->ADDRESS }} </td>
                                                     <td> {{ $customers[$i]->EMAIL_ADDRESS }} </td>
-                                                    <td> {{ $customers[$i]->CONTACT_NO  }} </td>
+                                                    <td> {{ $customers[$i]->MOBILE_NO_1  }} </td>
                                                     <td>
                                                         <select class="store_lists_action">
                                                             <option value="0:">-- Select --</option>
